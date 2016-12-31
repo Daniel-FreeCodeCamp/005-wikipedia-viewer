@@ -18,12 +18,9 @@ function loadData() {
     url: wikiUrl,
     dataType: "jsonP",
     success: function (response) {
-      //console.log("response: [" + response + "]");
       var articleList = response[1];
-      //console.log(articleList.length);
       for (var i1 = 0; i1 < articleList.length; i1++) {
         articleStr = articleList[i1];
-        console.log("articleStr : " + articleStr);
         var url = 'http://en.wikipedia.org/wiki/' + articleStr;
         var openAnchor = '<a href="' + url + '" target="_blank">';
         $wikiElem.append('<li>' + openAnchor + articleStr + '</a></li>');
